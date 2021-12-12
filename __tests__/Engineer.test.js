@@ -11,7 +11,7 @@ test('check if can get github from getGithub()', () => {
 });
 
 test('check if can get Engineer role from getRole()', () => {
-    const employee = new Engineer('Ken','123456', 'kentest@xyz.com');
+    const employee = new Engineer('Ken','123456', 'kentest@xyz.com', 'khanhlam90');
     expect(employee.getRole()).toBe('Engineer');
 });
 
