@@ -96,12 +96,12 @@ function addManager() {
         const teamMember = new Manager(managerName, managerId, managerEmail, managerOfficeNumber);
         finalTeamObj.push(teamMember);
 
-        addTeamMembers();
+        addTeamMember();
 
     });
 };
 
-function addTeamMembers() {
+function addTeamMember() {
     inquirer
     .prompt ([
         {
@@ -128,4 +128,144 @@ function addTeamMembers() {
     });
 };
 
+function addEngineer() {
+    inquirer
+    .prompt ([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Enter team engineer\'s name:',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log ('Please enter team engineer\'s name!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Enter team engineer\'s ID:',
+            validate: idInput => {
+                if (idInput) {
+                    return true;
+                } else {
+                    console.log ('Please enter team engineer\'s ID!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter team engineer\'s email address:',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log ('Please enter team engineer\'s email address!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Enter team engineer\'s Github username:',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log ('Please enter team engineer\'s Github username!');
+                    return false;
+                }
+            }
+        },
+    ])
+    .then(function(engineerData) {
+        const engineerName = engineerData.name;
+        const engineerId = engineerData.id;
+        const engineerEmail = engineerData.email;
+        const engineerGithub = engineerData.github;
+        const teamMember = new Engineer(engineerName, engineerId, engineerEmail, engineerGithub);
+        finalTeamObj.push(teamMember);
 
+        addTeamMember();
+
+    });
+};
+
+function addIntern() {
+    inquirer
+    .prompt ([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Enter team intern\'s name:',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log ('Please enter team intern\'s name!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Enter team intern\'s ID:',
+            validate: idInput => {
+                if (idInput) {
+                    return true;
+                } else {
+                    console.log ('Please enter team intern\'s ID!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter team intern\'s email address:',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log ('Please enter team intern\'s email address!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'Enter team intern\'s school:',
+            validate: schoolInput => {
+                if (schoolInput) {
+                    return true;
+                } else {
+                    console.log ('Please enter team intern\'s school!');
+                    return false;
+                }
+            }
+        },
+    ])
+    .then(function(internData) {
+        const internName = internData.name;
+        const internId = internData.id;
+        const internEmail = internData.email;
+        const internSchool = internData.school;
+        const teamMember = new Intern(internName, internId, internEmail, internSchool);
+        finalTeamObj.push(teamMember);
+
+        addTeamMember();
+
+    });
+};
+
+function pageTemplate() {
+    
+}
