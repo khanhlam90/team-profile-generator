@@ -1,12 +1,10 @@
 const inquirer = require ('inquirer');
-//const stylesheet = require ('./src/css');
 const fs = require ('fs');
 
 const Employee = require ('./lib/Employee');
 const Manager = require ('./lib/Manager');
 const Engineer = require ('./lib/Engineer');
 const Intern = require ('./lib/Intern');
-const { SIGTERM } = require('constants');
 
 let finalTeamObj = [];
 
@@ -82,10 +80,10 @@ function addManager() {
         },
         {
             type: 'input',
-            name: 'number',
+            name: 'officeNumber',
             message: 'Enter team manager\'s office number:',
-            validate: numberInput => {
-                if (numberInput) {
+            validate: officeNumberInput => {
+                if (officeNumberInput) {
                     return true;
                 } else {
                     console.log ('Please enter team manager\'s office number!');
@@ -326,8 +324,13 @@ function pageTemplate() {
         if (finalTeamObj[i].officeNumber) {
             htmlCurrentObj += `
             <p>Office Number: ${finalTeamObj[i].officeNumber}</p>
-            `
+            ` 
         }
+        // if (finalTeamObj[i].officeNumber) {
+        //     htmlCurrentObj += `
+        //     <p>Office Number: ${finalTeamObj[i].officeNumber}</p>
+        //     `
+        // }
         // if fn to check if member has Github username
         if (finalTeamObj[i].github) {
             htmlCurrentObj += `
@@ -359,34 +362,20 @@ function pageTemplate() {
     // push these closed elements to the final html object
     htmlFinalObj.push(htmlClosedElements);
 
-    fs.writeFile(`./dist/${finalTeamObj[0]}.html`, htmlFinalObj.join(""), err => {
-        // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
-        if (err) {
-            reject(err);
-            // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
-            return;
-          }
-    
-          // if everything went well, resolve the Promise and send the successful data to the `.then()` method
-          resolve({
-            ok: true,
-            message: 'Files created! Please check directory "dist" for final Team Profile HTML and related CSS!'
-        });
+    fs.writeFile(`./dist/${finalTeamObj[0]}.html`, htmlFinalObj.join(""), function (err) {
+       console.log(`
+-----------------------------------------------------------------------------
+HTML file created! Please check directory "dist" for final Team Profile HTML!
+-----------------------------------------------------------------------------
+       `);
     });
 
-    fs.copyFile('./src/style.css', './dist/style.css', err => {
-        // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
-        if (err) {
-            reject(err);
-            // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
-            return;
-        }
-
-        // if everything went well, resolve the Promise and send the successful data to the `.then()` method
-        resolve({
-            ok: true,
-            message: 'Stylesheet created!'
-        });
+    fs.copyFile('./src/style.css', './dist/style.css', function (err) {
+        console.log(`
+-----------------
+CSS file created!
+-----------------S
+        `);
     });
 };
 
