@@ -62,7 +62,7 @@ After the installation, please follow:
 - Screenshot of Command Line Demonstration:
 ![Screenshot of Command Line Demonstration](./assets/images/demonstration-1.png)
 - Screenshot of HTML output - viewed in VS Code:
-![Screenshot of HTML output](./assets/images/readme-demonstration-2.png)
+![Screenshot of HTML output](./assets/images/demonstration-2.png)
 - Screenshot of HTML output - viewed in Chrome :
 ![Screenshot of Command Line Demonstration](./assets/images/demonstration-3.png)
 - Screenshot of CSS output - viewed in VS Code :
