@@ -68,7 +68,7 @@ After the installation, please follow:
 - Screenshot of CSS output - viewed in VS Code :
 ![Screenshot of Command Line Demonstration](./assets/images/demonstration-4.png)
 
-- [Link to the video demonstration of how to run the application](https://drive.google.com/drive/folders/1B6jNESKHkZAgko8mgUu6xQ1EsnDlw_S2?usp=sharing)
+- [Link to the video demonstration of how to run the application](https://drive.google.com/file/d/1y3yGShZRISBJmTXW_OxaevSzJEC0NNS8/view?usp=sharing)
 
 ## License
 
@@ -91,7 +91,7 @@ Please reach me using:
 [My Github Account](https://github.com/khanhlam90)
 
 ## Project Links:
-* [Demostration Video](https://drive.google.com/drive/folders/1B6jNESKHkZAgko8mgUu6xQ1EsnDlw_S2?usp=sharing)
+* [Demostration Video](https://drive.google.com/file/d/1y3yGShZRISBJmTXW_OxaevSzJEC0NNS8/view?usp=sharing)
 * [Sample HTML and CSS](./dist)
 * [Github Repository](https://github.com/khanhlam90/team-profile-generator.git)
 
