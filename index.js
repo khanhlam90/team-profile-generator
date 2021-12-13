@@ -374,7 +374,7 @@ HTML file created! Please check directory "dist" for final Team Profile HTML!
         console.log(`
 -----------------
 CSS file created!
------------------S
+-----------------
         `);
     });
 };
